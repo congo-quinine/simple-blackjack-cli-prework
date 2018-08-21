@@ -54,9 +54,5 @@ end
 
 def runner
   # code runner here
- welcome
-until display_card_total(card_total) > 21
-  initial_round
-  hit?
-end
+
 end
