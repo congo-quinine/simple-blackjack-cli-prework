@@ -23,25 +23,25 @@ def end_game(card_total)
 end
 
 def initial_round
-  total = deal_card
-  total2 = deal_card
-  sum = total + total2
+  sum = deal_card + deal_card
   display_card_total(sum)
   return sum
 end
 
 def hit?(card_total)
   prompt_user
-  what = get_user_input
-  if what == "h"
-  card_total += deal_card
-elsif what != 's' || what != 'h'
-  invalid_command
-  prompt_user
+  holdStick = get_user_input
+   if holdStick == 'h'
+    card_total += deal_card
+    return hit?(card_total)
+  elsif holdStick == 's'
+    return runner
   else
-  "Good luck"
+    invalid_command
   end
-  return card_total
+    return card_total
+  end
+  puts "new total #{card_total}"
 end
 
 def invalid_command
@@ -52,7 +52,12 @@ end
 # get every test to pass before coding runner below #
 #####################################################
 
-def runner
-  # code runner here
-
-end
+# def runner
+#   # code runner here
+#   if
+#
+#   welcome
+#   card_total = initial_round
+#   hit?(card_total)
+#
+# end
