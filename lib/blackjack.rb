@@ -41,8 +41,6 @@ def hit?(card_total)
   end
     return card_total
   end
-  puts "new total #{card_total}"
-end
 
 def invalid_command
   puts "Please enter a valid command"
